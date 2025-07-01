@@ -453,63 +453,6 @@ Join the mission! Here's how:
 </div>  
 
 
-## 🎥 **Quick Glance – Version 2.0 (AI-Powered Resume Analyzer)**  
-
-<div align="center">  
-<table>  
-
-<tr>  
-<td align="center"><b>  
-   
-   [🔍 AI Resume Analysis (Custom Job Description)](https://resumind.streamlit.app/)
-   </b></td>  
-<td align="center"><b>  
-   
-   [📊 AI Resume Score & Statistics](https://resumind.streamlit.app/)
-</b></td>  
-</tr>  
-
-<tr>  
-<td><img src="https://github.com/user-attachments/assets/2105d65a-f01c-4af2-995c-fa29854a4fa1" alt="🔍 AI Resume Analysis with Custom Job Description" width="500px"></td>  
-<td><img src="https://github.com/user-attachments/assets/98f3d612-a167-4fbd-a1e2-a0a122d101a6" alt="📊 AI Resume Score & Statistics" width="500px"></td>  
-</tr>  
-
-<tr>  
-<td align="center"><b>  
-   
-   [📄 AI-Generated PDF Resume Report](https://resumind.streamlit.app/)
-   </b></td>  
-<td align="center"><b>  
-   
-   [📊 AI Resume Analysis Insights](https://resumind.streamlit.app/)
-   </b></td>  
-</tr>  
-
-<tr>  
-<td><img src="https://github.com/user-attachments/assets/e74aa01f-36e3-489a-8873-1807389007de" alt="📄 AI-Generated PDF Resume Report" width="500px"></td>  
-<td><img src="https://github.com/user-attachments/assets/9c5fbaf9-bb32-468c-b709-8e795d3f1796" alt="📊 AI Resume Analysis Insights" width="500px"></td>  
-</tr>  
-
-<tr>  
-<td align="center"><b>  
-   
-   [🔗 LinkedIn Job Scraper (Search Results)](https://resumind.streamlit.app/)
-   </b></td>  
-<td align="center"><b>  
-   
-   [🏢 LinkedIn Scraper (Job Listings UI)](https://resumind.streamlit.app/)
-   </b></td>  
-</tr>  
-
-<tr>  
-<td><img src="https://github.com/user-attachments/assets/1fedb318-03d9-4cd6-8b40-20714cb53b48" alt="🔗 LinkedIn Job Scraper (Search Results)" width="500px"></td>  
-<td><img src="https://github.com/user-attachments/assets/46081404-8cad-4d72-b921-e98103b9918e" alt="🏢 LinkedIn Scraper (Job Listings UI)" width="500px"></td>  
-</tr>  
-
-</table>  
-</div>  
-
-> Note: **Time Taking For scraping so have Patience**
 
 ## 🎨 **Interactive Resume Templates**  
 
