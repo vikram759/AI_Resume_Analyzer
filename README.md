@@ -115,7 +115,7 @@ Follow the steps below to set up and run the **Smart AI Resume Analyzer** on you
 Open a terminal and run:
 
    ```bash
-   git clone https://github.com/Hunterdii/resume-analyzer-ai.git
+   git clone github.com/vikram759/AI_Resume_Analyzer.git
    cd Smart-AI-Resume-Analyzer
    ```
 
@@ -225,7 +225,7 @@ admin123
 ### 🔹 Admin Panel Access:
    - The **Admin Section** will be visible **only after login**, right below the **Dashboard** section.
 
-<!--### Deploy to Streamlit Cloud
+### Deploy to Streamlit Cloud
 
 1. Push your code to GitHub
 2. Sign up for [Streamlit Cloud](https://streamlit.io/cloud)
@@ -233,7 +233,7 @@ admin123
 4. Add your API keys as secrets in the Streamlit Cloud dashboard
 5. Deploy the app
 
-### Deploy with Docker
+<!-- ### Deploy with Docker
 
 1. Build the Docker image:
    ```bash
@@ -296,7 +296,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
--->
+  -->
 
 ## Known Bug 🚨 Autofill Glitch in Resume Builder!  
 
