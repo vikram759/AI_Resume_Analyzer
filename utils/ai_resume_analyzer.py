@@ -16,6 +16,32 @@ import json
 import math
 import re
 
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, Flowable, KeepTogether
+from reportlab.graphics.shapes import Drawing, Rect, String, Line
+from reportlab.graphics.charts.piecharts import Pie
+from reportlab.graphics.charts.barcharts import VerticalBarChart
+from reportlab.graphics.charts.linecharts import HorizontalLineChart
+from reportlab.graphics.charts.legends import Legend
+import io
+import datetime
+import random
+
+def clean_markdown(text):
+    if not text:
+        return ""
+    text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)
+    text = re.sub(r'\*(.*?)\*', r'\1', text)
+    text = re.sub(r'__(.*?)__', r'\1', text)
+    text = re.sub(r'_(.*?)_', r'\1', text)
+    text = re.sub(r'^#{1,6}\s+', '', text, flags=re.MULTILINE)
+    text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)
+    return text.strip()
+
+
 
 class AIResumeAnalyzer:
     def __init__(self):
@@ -195,7 +221,7 @@ class AIResumeAnalyzer:
             return {"error": "Google API key is not configured. Please add it to your .env file."}
         
         try:
-            model = genai.GenerativeModel("gemini-2.5-flash")
+            model = genai.GenerativeModel("gemini-3.5-flash")
             
             base_prompt = f"""
             You are an expert resume analyst with deep knowledge of industry standards, job requirements, and hiring practices across various fields. Your task is to provide a comprehensive, detailed analysis of the resume provided.
@@ -1601,6 +1627,32 @@ class AIResumeAnalyzer:
             analysis_text = analysis_result.get("full_response", "")
             if not analysis_text:
                 analysis_text = analysis_result.get("analysis", "")
+
+            # Get strengths and weaknesses from analysis result
+            strengths = analysis_result.get("strengths", [])
+            weaknesses = analysis_result.get("weaknesses", [])
+
+            if not strengths and "## Key Strengths" in analysis_text:
+                try:
+                    strengths_section = analysis_text.split("## Key Strengths")[1].split("##")[0].strip()
+                    strengths = [
+                        clean_markdown(line.replace("-", "").replace("*", "").replace("•", "").strip())
+                        for line in strengths_section.splitlines()
+                        if line.strip().startswith(("-", "*", "•"))
+                    ]
+                except Exception:
+                    strengths = []
+
+            if not weaknesses and "## Areas for Improvement" in analysis_text:
+                try:
+                    weaknesses_section = analysis_text.split("## Areas for Improvement")[1].split("##")[0].strip()
+                    weaknesses = [
+                        clean_markdown(line.replace("-", "").replace("*", "").replace("•", "").strip())
+                        for line in weaknesses_section.splitlines()
+                        if line.strip().startswith(("-", "*", "•"))
+                    ]
+                except Exception:
+                    weaknesses = []
                 
             overall_assessment = ""
             if "## Overall Assessment" in analysis_text:
