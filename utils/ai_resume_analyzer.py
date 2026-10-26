@@ -259,7 +259,8 @@ class AIResumeAnalyzer:
             
             ## Resume Score
             [Provide a score from 0-100 based on the overall quality of the resume. Use this format exactly: "Resume Score: XX/100" where XX is the numerical score. Be consistent with your assessment - a resume with significant issues should score below 60, an average resume 60-75, a good resume 75-85, and an excellent resume 85-100.]
-            
+            ## Adhered to Job Description 
+            [Evaluate only information supported by the supplied resume. Do not invent qualifications, skills, experience, or education. If essential information appears missing or ambiguous, explicitly flag it rather than assuming it is absent. Distinguish between information that is not present in the resume and information that may have been lost during extraction.]
             Resume:
             {resume_text}
             """
